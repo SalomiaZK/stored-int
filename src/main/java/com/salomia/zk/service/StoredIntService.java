@@ -12,15 +12,15 @@ public class StoredIntService {
     private static final String file_path = "/tmp/stored-int.txt";
     public boolean storedInInt() {
         File file = new File(file_path);
-        int value = 0;
+        String value = "";
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))){
-                    value = Integer.parseInt(reader.readLine());
+                    value = reader.readLine();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }else {
-            value = new Random().nextInt(100);
+            value = String.valueOf(new Random().nextInt(100));
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))){
                     writer.write(value);
             } catch (IOException e) {
