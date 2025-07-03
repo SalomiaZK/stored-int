@@ -10,7 +10,7 @@ import java.util.Random;
 public class StoredIntService {
 
     private static final String file_path = "/tmp/stored-int.txt";
-    public boolean storedInInt() {
+    public String storedInInt() {
         File file = new File(file_path);
         String value = "";
         if (file.exists()) {
@@ -27,7 +27,7 @@ public class StoredIntService {
                 throw new RuntimeException(e);
             }
         }
-        return file.exists();
+        return value;
     }
 
 }

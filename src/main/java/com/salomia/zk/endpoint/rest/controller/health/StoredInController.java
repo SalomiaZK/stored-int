@@ -14,7 +14,7 @@ public class StoredInController {
     }
 
     @GetMapping("/stored-int")
-    public boolean storedInInt() {
+    public String storedInInt() {
         return storedIntService.storedInInt();
     }
 }
